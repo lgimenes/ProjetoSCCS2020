@@ -2,14 +2,14 @@
  * Nome do Arquivo:	main.c
  * Dependencias:	
  * Processador:		PIC18F4550
- * Opção de Clock:	HS 20MHz (externo) - CPU: 48MHz
+ * Opï¿½ï¿½o de Clock:	HS 20MHz (externo) - CPU: 48MHz
  * Compilador:		XC8 
  *
  * Autor:			Weslley M. Torres
  *
  * Data:			v1 - 08/March/2020 - Initial revision 
  *
- * Descrição:       Funções main
+ * Descriï¿½ï¿½o:       Funï¿½ï¿½es main
  * 
  * Notas:
  *	
@@ -108,7 +108,15 @@ void TaskLED_RB0( void )
 
 	if(TimerTaskLED_RB0 == 0)
 	{
-		TimerTaskLED_RB0 = TIMER_500ms;
-		LED_RB0 = ~LED_RB0;
+		TimerTaskLED_RB0 = TIMER_250ms;
+		LED_RB0 = LED_RB0;
+        Valor_LCD();
 	}
+}
+
+void Valor_LCD(void)
+{
+    PosicaoCursorLCD(2,11)
+    EscreveFraseRamLCD("Teste1")
+    
 }
